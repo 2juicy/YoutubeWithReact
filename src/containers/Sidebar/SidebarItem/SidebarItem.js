@@ -5,7 +5,7 @@ import "./SidebarItem.scss";
 export default function SidebarItem({ highlight, icon, label }) {
   return (
     <Menu.Item className={`sidebar-item ${highlight ? "highlight" : null}`}>
-      <div className="sidebar-item-alignment">
+      <div className="sidebar-item-align">
         <span>
           <Icon size="large" name={icon} />
         </span>
