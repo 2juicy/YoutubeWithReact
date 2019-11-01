@@ -6,7 +6,7 @@ export default function SidebarHeader({ title }) {
   return (
     <Menu.Item>
       <Menu.Header className="sidebar-header">
-        {title.toUpperCase()}
+        {title ? title.toUpperCase() : ""}
       </Menu.Header>
     </Menu.Item>
   );
