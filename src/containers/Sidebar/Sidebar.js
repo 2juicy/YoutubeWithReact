@@ -12,6 +12,10 @@ export default function Sidebar() {
       <SidebarItem label="History" icon="history" />
       <SidebarItem label="Watch later" icon="clock" />
       <SidebarItem label="Liked videos" icon="thumbs up" />
+      <SidebarItem label="Movies and Shows" icon="film" />
+      <SidebarItem label="Report History" icon="flag" />
+      <SidebarItem label="Help" icon="help circle" />
+      <SidebarItem label="Send feedback" icon="comment" />
     </Menu>
   );
 }
