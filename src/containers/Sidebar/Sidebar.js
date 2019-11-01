@@ -1,8 +1,9 @@
 import React from "react";
 import { Menu, Divider } from "semantic-ui-react";
+import "./Sidebar.scss";
 import SidebarItem from "./SidebarItem/SidebarItem";
 import SidebarHeader from "./SidebarHeader/SidebarHeader";
-import "./Sidebar.scss";
+import Subscriptions from "./Subscriptions/Subscriptions";
 
 export default function Sidebar() {
   return (
@@ -16,6 +17,7 @@ export default function Sidebar() {
       <SidebarItem label="Watch later" icon="clock" />
       <SidebarItem label="Liked videos" icon="thumbs up" />
       <Divider />
+      <Subscriptions />
       <SidebarHeader title="More from YourTube" />
       <SidebarItem label="Movies and Shows" icon="film" />
       <Divider />

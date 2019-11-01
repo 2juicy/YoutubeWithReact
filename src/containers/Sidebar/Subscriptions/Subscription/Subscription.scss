@@ -1,0 +1,14 @@
+.subscription {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i.icon {
+    color: red;
+  }
+
+  .new-vids-count {
+    color: gray;
+  }
+}
