@@ -4,6 +4,7 @@ import "./Sidebar.scss";
 import SidebarItem from "./SidebarItem/SidebarItem";
 import SidebarHeader from "./SidebarHeader/SidebarHeader";
 import Subscriptions from "./Subscriptions/Subscriptions";
+import SidebarFooter from "./SidebarFooter/SidebarFooter";
 
 export default function Sidebar() {
   return (
@@ -25,6 +26,7 @@ export default function Sidebar() {
       <SidebarItem label="Help" icon="help circle" />
       <SidebarItem label="Send feedback" icon="comment" />
       <Divider />
+      <SidebarFooter />
     </Menu>
   );
 }

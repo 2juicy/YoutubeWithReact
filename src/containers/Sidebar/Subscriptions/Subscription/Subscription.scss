@@ -1,8 +1,20 @@
 .subscription {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  .flex-text {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 20px !important;
+    }
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 
   i.icon {
     color: red;

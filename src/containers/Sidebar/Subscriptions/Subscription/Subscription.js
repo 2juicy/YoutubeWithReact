@@ -4,9 +4,9 @@ import "./Subscription.scss";
 
 export default function Subscription({ broadcasting, newVids, label }) {
   return (
-    <Menu.Item>
-      <div className="subscription">
-        <div>
+    <Menu.Item className="sidebar-item">
+      <div className="subscription ">
+        <div className="flex-text">
           <Image avatar src="https://via.placeholder.com/28x28" />
           <span>{label}</span>
         </div>
