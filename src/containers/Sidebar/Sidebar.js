@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu } from "semantic-ui-react";
-import { SidebarItem } from "./SidebarItem/SidebarItem";
+import SidebarItem from "./SidebarItem/SidebarItem";
 import "./Sidebar.scss";
 
 export default function Sidebar() {
