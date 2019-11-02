@@ -11,7 +11,6 @@
   color: black;
 
   .vid-preview-metadata-container {
-    padding-top: 5px;
     font-size: 13px;
     color: #6e6e6e;
 
@@ -28,8 +27,10 @@
     max-height: 2.8em;
   }
 
-  .semi-bold {
+  .vid-title {
     font-weight: bold;
+    font-size: 1.17em;
+    margin: 8px 0;
   }
 }
 

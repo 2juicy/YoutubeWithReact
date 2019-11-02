@@ -13,7 +13,7 @@ export default function VidPreview() {
       </div>
 
       <div className="vid-info">
-        <div className="semi-bold show-max-two-lines">Video Title</div>
+        <div className="vid-title show-max-two-lines">Video Title</div>
         <div className="vid-preview-metadata-container">
           <div className="channel-title">Channel Title</div>
 
