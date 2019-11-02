@@ -2,4 +2,16 @@
 
 .home {
   margin: $header-height 0 0 $sidebar-width;
+  display: flex;
+  justify-content: center;
+}
+
+.responsive-vid-grid-container {
+  max-width: 80%;
+}
+
+@media screen and (max-width: 476px) {
+  .responsive-vid-grid-container {
+    max-width: 50%;
+  }
 }

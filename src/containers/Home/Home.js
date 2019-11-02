@@ -1,11 +1,15 @@
 import React from "react";
 import "./Home.scss";
-import VidPreview from "../../components/VidPreview/VidPreview";
+import VidGrid from "../../components/VidGrid/VidGrid";
 
 export default function Home() {
   return (
     <div className="home">
-      <VidPreview />
+      <div className="responsive-vid-grid-container">
+        <VidGrid title="Trending" />
+        <VidGrid title="Music" />
+        <VidGrid title="Anime" hideDivider />
+      </div>
     </div>
   );
 }
