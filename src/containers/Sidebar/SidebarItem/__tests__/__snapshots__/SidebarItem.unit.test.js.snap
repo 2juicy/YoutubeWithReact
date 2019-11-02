@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarItem renders empty SidebarItem 1`] = `
+<MenuItem
+  className="sidebar-item null"
+>
+  <div
+    className="sidebar-item-align"
+  >
+    <span>
+      <Icon
+        as="i"
+        size="large"
+      />
+    </span>
+    <span />
+  </div>
+</MenuItem>
+`;
+
+exports[`renders highlighted SideBarItem that navigates to /feed/trending 1`] = `
+<MenuItem
+  className="sidebar-item null"
+>
+  <div
+    className="sidebar-item-align"
+  >
+    <span>
+      <Icon
+        as="i"
+        name="fire"
+        size="large"
+      />
+    </span>
+    <span>
+      Trending
+    </span>
+  </div>
+</MenuItem>
+`;

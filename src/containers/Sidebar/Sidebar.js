@@ -9,7 +9,7 @@ import SidebarFooter from "./SidebarFooter/SidebarFooter";
 export default function Sidebar() {
   return (
     <Menu borderless vertical stackable fixed="left" className="side-nav">
-      <SidebarItem highlight={true} label="Home" icon="home" />
+      <SidebarItem highlight label="Home" icon="home" />
       <SidebarItem label="Trending" icon="fire" />
       <SidebarItem label="Followers" icon="spy" />
       <Divider />

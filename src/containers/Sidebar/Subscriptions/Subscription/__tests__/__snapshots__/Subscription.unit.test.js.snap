@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subscription renders 1`] = `
+<MenuItem
+  className="sidebar-item"
+>
+  <div
+    className="subscription "
+  >
+    <div
+      className="flex-text"
+    >
+      <Image
+        as="img"
+        avatar={true}
+        src="https://via.placeholder.com/28x28"
+        ui={true}
+      />
+      <span />
+    </div>
+  </div>
+</MenuItem>
+`;
