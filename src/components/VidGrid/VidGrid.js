@@ -19,14 +19,6 @@ export default function VidGrid({ title, hideDivider }) {
         <VidPreview />
         <VidPreview />
         <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
       </div>
       {hideDivider ? null : <Divider />}
     </>
