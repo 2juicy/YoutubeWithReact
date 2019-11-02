@@ -8,6 +8,7 @@ export default function Subscriptions() {
     <>
       <SidebarHeader title="Subscriptions" />
       <Subscription label="Diversity" broadcasting />
+      <Subscription label="ReallyLongTestName" broadcasting />
       <Subscription label="Pop Music - Topic" newVids={121} />
       <Subscription label="Blume" newVids={8} />
       <Subscription label="NoCopyrightSounds" newVids={5} />
