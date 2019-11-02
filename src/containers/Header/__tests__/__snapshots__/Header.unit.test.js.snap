@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders 1`] = `
+<Menu
+  borderless={true}
+  className="top-menu"
+  fixed="top"
+>
+  <MenuItem
+    className="logo"
+    header={true}
+  >
+    <Image
+      as="img"
+      size="mini"
+      src="/YourTube.png"
+      ui={true}
+    />
+    <h2>
+      YourTube
+    </h2>
+  </MenuItem>
+  <MenuMenu
+    className="nav-container"
+  >
+    <MenuItem
+      className="search-input"
+    >
+      <Form
+        as="form"
+      >
+        <FormField>
+          <Input
+            action="Go"
+            placeholder="Search"
+            size="small"
+            type="text"
+          />
+        </FormField>
+      </Form>
+    </MenuItem>
+  </MenuMenu>
+  <MenuMenu
+    position="right"
+  >
+    <MenuItem>
+      <Icon
+        as="i"
+        className="header-icon"
+        name="video camera"
+        size="large"
+      />
+    </MenuItem>
+    <MenuItem>
+      <Icon
+        as="i"
+        className="header-icon"
+        name="grid layout"
+        size="large"
+      />
+    </MenuItem>
+    <MenuItem>
+      <Icon
+        as="i"
+        className="header-icon"
+        name="alarm"
+        size="large"
+      />
+    </MenuItem>
+    <MenuItem
+      name="avatar"
+    >
+      <Image
+        as="img"
+        avatar={true}
+        src="https://yt3.ggpht.com/a-/AAuE7mBQq0sOlxUxcp71beNsH8PsR0WyTPbc1S6cJA=s88-c-k-c0x00ffffff-no-rj-mo"
+        ui={true}
+      />
+    </MenuItem>
+  </MenuMenu>
+</Menu>
+`;
