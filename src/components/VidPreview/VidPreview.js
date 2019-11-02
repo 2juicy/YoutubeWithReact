@@ -17,7 +17,7 @@ export default function VidPreview() {
         <div className="vid-preview-metadata-container">
           <div className="channel-title">Channel Title</div>
           <div>
-            <span>24M views ⚬ 22 days ago</span>
+            <span>24M views • 22 days ago</span>
           </div>
         </div>
       </div>
