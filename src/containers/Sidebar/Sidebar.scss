@@ -1,7 +1,9 @@
+@import "../../styles/shared.scss";
+
 .ui.menu.fixed.side-nav {
   background-color: #f5f5f5;
-  margin-top: 62px;
-  padding-bottom: 62px;
+  margin-top: $header-height;
+  padding-bottom: $header-height;
   overflow-y: auto;
 }
 

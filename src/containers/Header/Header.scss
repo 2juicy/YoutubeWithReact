@@ -1,8 +1,10 @@
+@import "../../styles/shared.scss";
+
 .ui.menu.top-menu {
   border: none;
 
   .logo {
-    width: 17rem;
+    width: $sidebar-width;
     h2 {
       margin: auto 0 auto 3px;
     }
