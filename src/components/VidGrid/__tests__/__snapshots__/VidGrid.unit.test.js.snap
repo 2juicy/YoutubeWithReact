@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VidGrid renders with empty string header 1`] = `
+<span
+  className="title"
+/>
+`;
+
+exports[`VidGrid renders with title prop 1`] = `
+<Fragment>
+  <div
+    className="vid-grid-header"
+  >
+    <span
+      className="title"
+    >
+      Trending
+    </span>
+  </div>
+  <div
+    className="vid-grid"
+  >
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+  </div>
+  <Divider />
+</Fragment>
+`;
+
+exports[`VidGrid renders without divider 1`] = `
+<Fragment>
+  <div
+    className="vid-grid-header"
+  >
+    <span
+      className="title"
+    >
+      Trending
+    </span>
+  </div>
+  <div
+    className="vid-grid"
+  >
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+  </div>
+</Fragment>
+`;
+
+exports[`VidGrid renders without props 1`] = `
+<Fragment>
+  <div
+    className="vid-grid-header"
+  >
+    <span
+      className="title"
+    />
+  </div>
+  <div
+    className="vid-grid"
+  >
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+    <VidPreview />
+  </div>
+  <Divider />
+</Fragment>
+`;
