@@ -5,7 +5,11 @@
 
   .logo {
     width: $sidebar-width;
+    a:visited {
+      color: black;
+    }
     h2 {
+      display: inline-block;
       margin: auto 0 auto 3px;
     }
   }
