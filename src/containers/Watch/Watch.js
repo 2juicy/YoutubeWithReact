@@ -6,7 +6,7 @@ import VidPreview from "../../components/VidPreview/VidPreview";
 export default function Watch() {
   return (
     <>
-      <Video id="LoIxl_ujiO8" />
+      <Video id="0siAhk2DlgA" />
       <VidPreview horizontal />
     </>
   );
