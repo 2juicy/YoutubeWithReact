@@ -12,9 +12,9 @@ export default function NextVid() {
           <span>Autoplay</span>
           <Checkbox toggle defaultChecked />
         </div>
-        <VidPreview horizontal />
-        <Divider />
       </div>
+      <VidPreview horizontal />
+      <Divider />
     </>
   );
 }
