@@ -9,19 +9,19 @@ export default function Watch() {
       <Video className="video" id="0siAhk2DlgA" />
       <div
         className="metadata"
-        style={{ width: "100%", height: "100%", backgroundColor: "red" }}
+        style={{ width: "100%", height: "100px", backgroundColor: "red" }}
       >
         Metadata
       </div>
       <div
         className="vid-info-box"
-        style={{ width: "100%", height: "100%", backgroundColor: "violet" }}
+        style={{ width: "100%", height: "100px", backgroundColor: "violet" }}
       >
         Video Info Box
       </div>
       <div
         className="comments"
-        style={{ width: "100%", height: "100%", backgroundColor: "blue" }}
+        style={{ width: "100%", height: "100px", backgroundColor: "blue" }}
       >
         Comments
       </div>
