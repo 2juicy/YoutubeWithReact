@@ -1,0 +1,11 @@
+@import "../../styles/shared.scss";
+
+.layout {
+  & > *:not(:first-child) {
+    margin-top: $header-height;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
