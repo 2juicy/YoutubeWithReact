@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedVids renders 1`] = `
+<div
+  className="related-vids"
+>
+  <NextVid />
+  <VidPreview
+    horizontal={true}
+  />
+  <VidPreview
+    horizontal={true}
+  />
+  <VidPreview
+    horizontal={true}
+  />
+</div>
+`;
