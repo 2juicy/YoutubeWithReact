@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders with children 1`] = `
+<div
+  className="layout"
+>
+  <Header />
+  <div>
+    Child
+  </div>
+  <div>
+    <h1>
+      Child
+    </h1>
+    <p>
+      Child
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Layout renders with one child 1`] = `
+<div
+  className="layout"
+>
+  <Header />
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`Layout renders without props 1`] = `
+<div
+  className="layout"
+>
+  <Header />
+</div>
+`;

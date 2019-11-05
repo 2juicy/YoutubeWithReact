@@ -10,15 +10,23 @@ exports[`Header renders 1`] = `
     className="logo"
     header={true}
   >
-    <Image
-      as="img"
-      size="mini"
-      src="/YourTube.png"
-      ui={true}
-    />
-    <h2>
-      YourTube
-    </h2>
+    <Link
+      to="/"
+    >
+      <Image
+        as="img"
+        size="mini"
+        src="/YourTube.png"
+        ui={true}
+      />
+    </Link>
+    <Link
+      to="/"
+    >
+      <h2>
+        YourTube
+      </h2>
+    </Link>
   </MenuItem>
   <MenuMenu
     className="nav-container"
