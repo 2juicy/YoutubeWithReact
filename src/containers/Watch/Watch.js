@@ -7,7 +7,7 @@ import VidMetaData from "../../components/VidMetaData/VidMetaData";
 export default function Watch() {
   return (
     <div className="watch-grid">
-      <Video className="video" id="0siAhk2DlgA" />
+      <Video className="video" id="L14hxW2SN68" />
       <VidMetaData className="metadata" views={9999} />
       <div
         className="vid-info-box"
