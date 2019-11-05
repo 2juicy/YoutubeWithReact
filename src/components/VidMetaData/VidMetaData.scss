@@ -5,8 +5,8 @@
   font-size: 16px;
 
   h3 {
-    font-weight: 400;
-    color: gray;
+    font-weight: bold;
+    color: black;
   }
 
   .vid-stats {
@@ -14,5 +14,14 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
+
+    .vid-actions {
+      display: flex;
+      align-items: center;
+
+      & > *:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
   }
 }
