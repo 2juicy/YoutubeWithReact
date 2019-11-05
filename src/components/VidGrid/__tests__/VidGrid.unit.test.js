@@ -13,11 +13,6 @@ describe("VidGrid", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test("renders without divider", () => {
-    const wrapper = shallow(<VidGrid title="Trending" hideDivider />);
-    expect(wrapper).toMatchSnapshot();
-  });
-
   test("renders with empty string header", () => {
     const wrapper = shallow(<span className="title"></span>);
     expect(wrapper).toMatchSnapshot();

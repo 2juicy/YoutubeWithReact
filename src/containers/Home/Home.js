@@ -8,7 +8,7 @@ export default function Home() {
       <div className="responsive-vid-grid-container">
         <VidGrid title="Trending" />
         <VidGrid title="Music" />
-        <VidGrid title="Anime" hideDivider />
+        <VidGrid title="Anime" />
       </div>
     </div>
   );

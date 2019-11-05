@@ -1,5 +1,5 @@
 .vid-grid-header {
-  padding: 14px 0 24px 4px;
+  padding: 28px 0 24px 4px;
 
   &:first-child {
     padding-top: 24px;
@@ -14,6 +14,8 @@
 .vid-grid {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   & > * {
     margin: 0 0 24px 4px;

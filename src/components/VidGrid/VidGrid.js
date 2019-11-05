@@ -1,9 +1,8 @@
 import React from "react";
 import "./VidGrid.scss";
 import VidPreview from "../VidPreview/VidPreview";
-import { Divider } from "semantic-ui-react";
 
-export default function VidGrid({ title, hideDivider }) {
+export default function VidGrid({ title }) {
   return (
     <>
       <div className="vid-grid-header">
@@ -24,7 +23,6 @@ export default function VidGrid({ title, hideDivider }) {
         <VidPreview />
         <VidPreview />
       </div>
-      {hideDivider ? null : <Divider />}
     </>
   );
 }
