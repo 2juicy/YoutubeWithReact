@@ -2,17 +2,13 @@ import React from "react";
 import "./Watch.scss";
 import Video from "../../components/Video/Video";
 import RelatedVids from "../../components/RelatedVids/RelatedVids";
+import VidMetaData from "../../components/VidMetaData/VidMetaData";
 
 export default function Watch() {
   return (
     <div className="watch-grid">
       <Video className="video" id="0siAhk2DlgA" />
-      <div
-        className="metadata"
-        style={{ width: "100%", height: "100px", backgroundColor: "red" }}
-      >
-        Metadata
-      </div>
+      <VidMetaData className="metadata" viewCount={9999} />
       <div
         className="vid-info-box"
         style={{ width: "100%", height: "100px", backgroundColor: "violet" }}
