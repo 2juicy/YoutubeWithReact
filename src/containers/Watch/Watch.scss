@@ -1,6 +1,9 @@
 .watch-grid {
   display: grid;
   grid-template: auto auto auto 1fr / auto 402px;
+  column-gap: 24px;
+  row-gap: 8px;
+  padding: 24px 24px 24px 0;
 
   .video {
     grid-column: 1 / 2;
