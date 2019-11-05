@@ -33,37 +33,6 @@ exports[`VidGrid renders with title prop 1`] = `
     <VidPreview />
     <VidPreview />
   </div>
-  <Divider />
-</Fragment>
-`;
-
-exports[`VidGrid renders without divider 1`] = `
-<Fragment>
-  <div
-    className="vid-grid-header"
-  >
-    <span
-      className="title"
-    >
-      Trending
-    </span>
-  </div>
-  <div
-    className="vid-grid"
-  >
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-    <VidPreview />
-  </div>
 </Fragment>
 `;
 
@@ -92,6 +61,5 @@ exports[`VidGrid renders without props 1`] = `
     <VidPreview />
     <VidPreview />
   </div>
-  <Divider />
 </Fragment>
 `;
