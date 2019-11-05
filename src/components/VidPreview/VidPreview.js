@@ -2,9 +2,9 @@ import React from "react";
 import "./VidPreview.scss";
 import { Image } from "semantic-ui-react";
 
-export default function VidPreview() {
+export default function VidPreview({ horizontal }) {
   return (
-    <div className="vid-preview">
+    <div className={`vid-preview ${horizontal ? "horizontal" : ""}`}>
       <div className="image-container">
         <Image src="http://via.placeholder.com/210x118" />
         <div className="time-label">
