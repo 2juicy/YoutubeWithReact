@@ -8,7 +8,7 @@ export default function Watch() {
   return (
     <div className="watch-grid">
       <Video className="video" id="0siAhk2DlgA" />
-      <VidMetaData className="metadata" viewCount={9999} />
+      <VidMetaData className="metadata" views={9999} />
       <div
         className="vid-info-box"
         style={{ width: "100%", height: "100px", backgroundColor: "violet" }}
