@@ -8,8 +8,8 @@ export default function App() {
   return (
     <Layout>
       <Switch>
+        <Route exact path="/" component={Home} />
         <Route path="/watch" component={Watch} />
-        <Route path="/" component={Home} />
       </Switch>
     </Layout>
   );
