@@ -37,5 +37,19 @@
     button {
       margin: 8px 0;
     }
+
+    p {
+      line-height: 1.4rem;
+      margin-bottom: 0;
+    }
+
+    .collapsed {
+      max-height: 2.8rem;
+      overflow-y: hidden;
+    }
+
+    .expanded {
+      max-height: none;
+    }
   }
 }
