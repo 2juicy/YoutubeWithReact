@@ -4,13 +4,8 @@ import { Button, Image } from "semantic-ui-react";
 
 export default function VidInfoBox() {
   const [toggleCollapse, setToggle] = useState(true);
-  let collapse = "collapsed";
-  let buttonTitle = "Show More";
-
-  if (!toggleCollapse) {
-    collapse = "expanded";
-    buttonTitle = "Show Less";
-  }
+  let collapse = toggleCollapse ? "collapsed" : "expanded";
+  let buttonTitle = toggleCollapse ? "Show More" : "Show Less";
 
   return (
     <div className="vid-info-box">
