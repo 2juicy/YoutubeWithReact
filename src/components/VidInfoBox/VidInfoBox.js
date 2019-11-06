@@ -1,6 +1,28 @@
 import React from "react";
 import "./VidInfoBox.scss";
+import { Button, Image } from "semantic-ui-react";
 
 export default function VidInfoBox() {
-  return <div className="vid-info-box">Info goes here.</div>;
+  return (
+    <div className="vid-info-box">
+      <Image
+        className="channel-img"
+        src="http://via.placeholder.com/48x48"
+        circular
+      />
+      <div className="vid-info">
+        <div className="channel-name">Channel Name</div>
+        <div className="vid-publish-date">Fri 13, 2019</div>
+      </div>
+      <Button color="youtube">12.3K Subscribe</Button>
+      <div className="vid-description">
+        <p>Paragraph...</p>
+        <p>Paragraph...</p>
+        <p>Paragraph...</p>
+        <p>Paragraph...</p>
+        <p>Paragraph...</p>
+        <Button compact>Show More</Button>
+      </div>
+    </div>
+  );
 }
