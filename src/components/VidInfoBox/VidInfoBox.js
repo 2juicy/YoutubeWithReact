@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./VidInfoBox.scss";
 import { Button, Image } from "semantic-ui-react";
 
 export default function VidInfoBox() {
+  const [collapse, setCollapse] = useState(true);
+
   return (
     <div className="vid-info-box">
       <Image
@@ -21,7 +23,9 @@ export default function VidInfoBox() {
         <p>Paragraph...</p>
         <p>Paragraph...</p>
         <p>Paragraph...</p>
-        <Button compact>Show More</Button>
+        <Button onClick={() => setCollapse(state => !state)} compact>
+          Show More
+        </Button>
       </div>
     </div>
   );
