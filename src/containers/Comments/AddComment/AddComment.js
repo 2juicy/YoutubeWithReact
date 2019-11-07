@@ -1,6 +1,6 @@
 import React from "react";
 import "./AddComment.scss";
-import { Form, Image } from "semantic-ui-react";
+import { Form, Image, TextArea } from "semantic-ui-react";
 
 export default function AddComment() {
   return (

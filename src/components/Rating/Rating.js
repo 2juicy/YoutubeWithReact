@@ -2,8 +2,8 @@ import React from "react";
 import "./Rating.scss";
 import { Icon, Progress } from "semantic-ui-react";
 
-export default function Rating({ likes, dislikes }) {
-  const percent = 100 * (likes / (likes + dislikes));
+export default function Rating({ likes, dislikes, hideProgress }) {
+  const percent = likes && dislikes ? 100 * (likes / (likes + dislikes)) : null;
 
   return (
     <div className="rating">
@@ -16,7 +16,9 @@ export default function Rating({ likes, dislikes }) {
         <Icon name="thumbs outline down" />
         <span>{dislikes}</span>
       </div>
-      <Progress className="progress" percent={percent} size="tiny" />
+      {percent && !hideProgress ? (
+        <Progress className="progress" percent={percent} size="tiny" />
+      ) : null}
     </div>
   );
 }
