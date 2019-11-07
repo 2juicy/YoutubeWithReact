@@ -1,6 +1,8 @@
+@import "../../styles/shared.scss";
+
 .vid-info-box {
   display: grid;
-  grid: auto auto / 58px auto max-content;
+  grid: auto auto / calc(#{$avatar-diameter} + #{$avatar-margin}) auto max-content;
   align-items: center;
   row-gap: 16px;
 

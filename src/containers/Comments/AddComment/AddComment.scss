@@ -1,0 +1,16 @@
+@import "../../../styles/shared.scss";
+
+.add-comment {
+  display: flex;
+  margin: 16px 0 16px 0;
+
+  form {
+    flex: 1;
+  }
+
+  .user-image {
+    width: $avatar-diameter;
+    height: $avatar-diameter;
+    margin-right: $avatar-margin;
+  }
+}
