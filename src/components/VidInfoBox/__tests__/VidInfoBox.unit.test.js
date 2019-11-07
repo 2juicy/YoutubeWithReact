@@ -9,7 +9,7 @@ describe("VidInfoBox", () => {
   });
 
   test("renders expanded", () => {
-    const wrapper = shallow(<VidInfoBox hook={() => setToggle(false)} />);
+    const wrapper = shallow(<VidInfoBox hook={() => setCollapse(false)} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
