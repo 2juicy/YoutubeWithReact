@@ -4,7 +4,9 @@ import { Button, Icon } from "semantic-ui-react";
 import Rating from "../Rating/Rating";
 
 export default function VidMetaData({ views }) {
-  const commas = views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const commas = views
+    ? views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    : null;
 
   return (
     <div className="vid-metadata">
