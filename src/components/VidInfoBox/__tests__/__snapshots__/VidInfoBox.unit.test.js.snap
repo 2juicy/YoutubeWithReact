@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VidInfoBox renders 1`] = `
+<div
+  className="vid-info-box"
+>
+  <Image
+    as="img"
+    circular={true}
+    className="channel-img"
+    src="http://via.placeholder.com/48x48"
+    ui={true}
+  />
+  <div
+    className="vid-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="vid-publish-date"
+    >
+      Fri 13, 2019
+    </div>
+  </div>
+  <Button
+    as="button"
+    color="youtube"
+  >
+    12.3K Subscribe
+  </Button>
+  <div
+    className="vid-description"
+  >
+    <div
+      className="collapsed"
+    >
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+    </div>
+    <Button
+      as="button"
+      compact={true}
+      onClick={[Function]}
+    >
+      Show More
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`VidInfoBox renders expanded 1`] = `
+<div
+  className="vid-info-box"
+>
+  <Image
+    as="img"
+    circular={true}
+    className="channel-img"
+    src="http://via.placeholder.com/48x48"
+    ui={true}
+  />
+  <div
+    className="vid-info"
+  >
+    <div
+      className="channel-name"
+    >
+      Channel Name
+    </div>
+    <div
+      className="vid-publish-date"
+    >
+      Fri 13, 2019
+    </div>
+  </div>
+  <Button
+    as="button"
+    color="youtube"
+  >
+    12.3K Subscribe
+  </Button>
+  <div
+    className="vid-description"
+  >
+    <div
+      className="collapsed"
+    >
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+      <p>
+        Paragraph...
+      </p>
+    </div>
+    <Button
+      as="button"
+      compact={true}
+      onClick={[Function]}
+    >
+      Show More
+    </Button>
+  </div>
+</div>
+`;

@@ -6,32 +6,13 @@ exports[`Watch renders 1`] = `
 >
   <Video
     className="video"
-    id="0siAhk2DlgA"
+    id="L14hxW2SN68"
   />
-  <div
+  <VidMetaData
     className="metadata"
-    style={
-      Object {
-        "backgroundColor": "red",
-        "height": "100px",
-        "width": "100%",
-      }
-    }
-  >
-    Metadata
-  </div>
-  <div
-    className="vid-info-box"
-    style={
-      Object {
-        "backgroundColor": "violet",
-        "height": "100px",
-        "width": "100%",
-      }
-    }
-  >
-    Video Info Box
-  </div>
+    views={9999}
+  />
+  <VidInfoBox />
   <div
     className="comments"
     style={
@@ -44,8 +25,6 @@ exports[`Watch renders 1`] = `
   >
     Comments
   </div>
-  <RelatedVids
-    className="related-vids"
-  />
+  <RelatedVids />
 </div>
 `;

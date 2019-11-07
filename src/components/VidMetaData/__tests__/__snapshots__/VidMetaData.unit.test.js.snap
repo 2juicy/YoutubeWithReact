@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VidMetaData renders with views 1`] = `
+<div
+  className="vid-metadata"
+>
+  <h3>
+    Video Title
+  </h3>
+  <div
+    className="vid-stats"
+  >
+    <span>
+      123,145
+       views
+    </span>
+    <div
+      className="vid-actions"
+    >
+      <Rating
+        dislikes={12}
+        likes={123}
+      />
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+        labelPosition="left"
+      >
+        <Icon
+          as="i"
+          name="share"
+        />
+        Share
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="add circle"
+        />
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        icon={true}
+      >
+        <Icon
+          as="i"
+          name="ellipsis horizontal"
+        />
+      </Button>
+    </div>
+  </div>
+</div>
+`;
