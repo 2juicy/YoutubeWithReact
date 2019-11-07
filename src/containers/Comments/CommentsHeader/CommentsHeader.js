@@ -1,5 +1,5 @@
 import React from "react";
-import "./Comments.scss";
+import "./CommentsHeader.scss";
 import { Button, Icon } from "semantic-ui-react";
 
 export default function Comments({ amount }) {
