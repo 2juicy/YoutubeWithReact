@@ -5,6 +5,6 @@ import Comment from "../Comment";
 describe("Comment", () => {
   test("renders", () => {
     const wrapper = shallow(<Comment />);
-    expect(wrapper).toMatchSnapShot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
