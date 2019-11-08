@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentsHeader renders with amount 1`] = `
+<div
+  className="comment-header"
+>
+  <h4>
+    12345
+     Comments
+  </h4>
+  <Button
+    as="button"
+    basic={true}
+    compact={true}
+    icon={true}
+    labelPosition="left"
+  >
+    <Icon
+      as="i"
+      name="align left"
+    />
+    Sort by
+  </Button>
+</div>
+`;
+
+exports[`CommentsHeader renders without props 1`] = `
+<div
+  className="comment-header"
+>
+  <h4>
+     Comments
+  </h4>
+  <Button
+    as="button"
+    basic={true}
+    compact={true}
+    icon={true}
+    labelPosition="left"
+  >
+    <Icon
+      as="i"
+      name="align left"
+    />
+    Sort by
+  </Button>
+</div>
+`;
