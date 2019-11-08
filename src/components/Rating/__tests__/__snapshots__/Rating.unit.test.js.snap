@@ -22,10 +22,5 @@ exports[`Rating renders 1`] = `
     />
     <span />
   </div>
-  <Progress
-    className="progress"
-    percent={NaN}
-    size="tiny"
-  />
 </div>
 `;

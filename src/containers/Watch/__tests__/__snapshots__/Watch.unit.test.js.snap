@@ -13,18 +13,7 @@ exports[`Watch renders 1`] = `
     views={9999}
   />
   <VidInfoBox />
-  <div
-    className="comments"
-    style={
-      Object {
-        "backgroundColor": "blue",
-        "height": "100px",
-        "width": "100%",
-      }
-    }
-  >
-    Comments
-  </div>
+  <Comments />
   <RelatedVids />
 </div>
 `;
