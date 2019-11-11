@@ -4,7 +4,7 @@ const initialState = {
   libraryLoaded: false
 };
 
-const getYoutubeLibraryLoaded = (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
     case YOUTUBE_LIBRARY_LOADED:
       return {
@@ -13,6 +13,6 @@ const getYoutubeLibraryLoaded = (state = initialState, action) => {
     default:
       return false;
   }
-};
+}
 
-export default getYoutubeLibraryLoaded;
+export const getYoutubeLibraryLoaded = (state = state.api.libraryLoaded);
