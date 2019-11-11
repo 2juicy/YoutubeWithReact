@@ -15,4 +15,4 @@ export default function(state = initialState, action) {
   }
 }
 
-export const getYoutubeLibraryLoaded = (state = state.api.libraryLoaded);
+export const getYoutubeLibraryLoaded = state => state.api.libraryLoaded;
