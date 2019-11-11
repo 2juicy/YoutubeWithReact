@@ -12,3 +12,10 @@ export function createRequestTypes(base) {
     return acc;
   }, {});
 }
+
+export function createAction(type, payload = {}) {
+  return {
+    type,
+    ...payload
+  };
+}
