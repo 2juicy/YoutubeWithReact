@@ -8,10 +8,7 @@ const initialState = {
 describe("api reducer", () => {
   test("test unused action with default initial state", () => {
     const unusedActionType = "unused-action-type";
-    const expectedEndState = { ...initialState };
-    expect(apiReducer(undefined, { type: unusedActionType })).toEqual(
-      expectedEndState
-    );
+    expect(apiReducer(undefined, { type: unusedActionType })).toEqual(false);
   });
 
   test("test api reducer with YOUTUBE_LIBRARY_LOADED action", () => {
