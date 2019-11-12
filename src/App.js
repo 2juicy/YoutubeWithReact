@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "./components/Layout/Layout";
 import Home from "./containers/Home/Home";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Watch from "./containers/Watch/Watch";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -38,4 +38,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ youtubeLibraryLoaded }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
