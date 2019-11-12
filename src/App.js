@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { youtubeLibraryLoaded } from "./store/actions/api";
 require("dotenv").config();
 
-function App() {
+function App(props) {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://apis.google.com/js/client.js";
@@ -17,13 +17,12 @@ function App() {
       window.gapi.load("client", () => {
         window.gapi.client.setApiKey(process.env.REACT_APP_API_KEY);
         window.gapi.client.load("youtube", "v3", () => {
-          youtubeLibraryLoaded();
+          props.youtubeLibraryLoaded();
         });
       });
     };
-
     document.body.appendChild(script);
-  }, []);
+  }, [props]);
 
   return (
     <Layout>
