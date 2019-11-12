@@ -11,7 +11,7 @@ require("dotenv").config();
 function App() {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://google.com/js/client.js";
+    script.src = "https://apis.google.com/js/client.js";
 
     script.onload = () => {
       window.gapi.load("client", () => {
