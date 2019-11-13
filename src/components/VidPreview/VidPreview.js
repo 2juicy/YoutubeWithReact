@@ -2,22 +2,30 @@ import React from "react";
 import "./VidPreview.scss";
 import { Image } from "semantic-ui-react";
 
-export default function VidPreview({ horizontal }) {
+export default function VidPreview({ horizontal, video }) {
+  if (!video) {
+    return null;
+  }
+
   return (
     <div className={`vid-preview ${horizontal ? "horizontal" : ""}`}>
       <div className="image-container">
-        <Image src="http://via.placeholder.com/210x118" />
+        <Image src={video.snippet.thumbnails.medium.url} />
         <div className="time-label">
-          <span>04:20</span>
+          <span>{video.contentDetails.duration}</span>
         </div>
       </div>
 
       <div className="vid-info">
-        <div className="vid-title show-max-two-lines">Video Title</div>
+        <div className="vid-title show-max-two-lines">
+          {video.snippet.title}
+        </div>
         <div className="vid-preview-metadata-container">
-          <div className="channel-title">Channel Title</div>
+          <div className="channel-title">{video.snippet.channelTitle}</div>
 
-          <p>24M views · 22 days ago</p>
+          <p>
+            {video.statistics.viewCount} views · {video.snippet.publishedAt}
+          </p>
         </div>
       </div>
     </div>

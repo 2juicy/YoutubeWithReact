@@ -2,7 +2,11 @@ import React from "react";
 import "./VidGrid.scss";
 import VidPreview from "../VidPreview/VidPreview";
 
-export default function VidGrid({ title }) {
+export default function VidGrid({ title, videos }) {
+  if (!videos || !videos.length) {
+    return null;
+  }
+
   return (
     <>
       <div className="vid-grid-header">
@@ -10,18 +14,9 @@ export default function VidGrid({ title }) {
       </div>
 
       <div className="vid-grid">
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
-        <VidPreview />
+        {videos.map(video => (
+          <VidPreview video={video} key={video.id} />
+        ))}
       </div>
     </>
   );
