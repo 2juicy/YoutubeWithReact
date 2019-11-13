@@ -1,0 +1,53 @@
+{
+  "mostPopular": {
+    "items": ["szby7ZHLnkA", "ZnKvQbpDYXU"],
+    "totalResults": 200,
+    "nextPageToken": "CAwQAA"
+  },
+  "byId": {
+    "szby7ZHLnkA": {
+      "id": "szby7ZHLnkA",
+      "snippet": {
+        "publishedAt": "2019-11-12T10:54:37.000Z",
+        "channelId": "UCF9imwPMSGz4Vq1NiTWCC7g",
+        "title": "Sonic The Hedgehog (2020) - New Official Trailer - Paramount Pictures",
+        "thumbnails": {
+          "medium": {
+            "url": "https://i.ytimg.com/vi/szby7ZHLnkA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
+        },
+        "channelTitle": "Paramount Pictures"
+      },
+      "contentDetails": {
+        "duration": "PT2M52S"
+      },
+      "Statistics": {
+        "viewCount": "6521633"
+      }
+    },
+    "ZnKvQbpDYXU": {
+      "id": "ZnKvQbpDYXU",
+      "snippet": {
+        "publishedAt": "2019-11-11T14:00:57.000Z",
+        "channelId": "UCjmJDM5pRKbUlVIzDYYWb6g",
+        "title": "SCOOB! - Official Teaser Trailer",
+        "thumbnails": {
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZnKvQbpDYXU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          }
+        },
+        "channelTitle": "Warner Bros. Pictures"
+      },
+      "contentDetails": {
+        "duration": "PT2M26S"
+      },
+      "Statistics": {
+        "viewCount": "11646680"
+      }
+    }
+  }
+}
