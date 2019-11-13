@@ -42,10 +42,9 @@ function reduceFetchMostPopularVideos(res, prevState) {
 
 // Selectors
 export const getMostPopularVideos = createSelector(
-  state => state.video.Id,
+  state => state.videos.Id,
   state => state.videos.mostPopular,
-  videosById,
-  mostPopular => {
+  (videosById, mostPopular) => {
     if (!mostPopular || !mostPopular.items) {
       return [];
     }
