@@ -1,8 +1,4 @@
 import videoReducer from "../video";
-import { MOST_POPULAR } from "../../actions/video";
-import { SUCCESS } from "../../actions";
-import mostPopularResponse from "./responses/MOST_POPULAR_SUCCESS";
-import mostPopularSuccessState from "./states/MOST_POPULAR_SUCCESS";
 
 const initialState = {
   Id: {},
