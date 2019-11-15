@@ -57,3 +57,23 @@ test("shortNumberString(1230000)", () => {
 test("shortNumberString(421000000)", () => {
   expect(shortNumberString(421000000)).toEqual("421M");
 });
+
+test("shortNumberString(1000000000)", () => {
+  expect(shortNumberString(1000000000)).toEqual("1B");
+});
+test("shortNumberString(15000000000)", () => {
+  expect(shortNumberString(1500000000)).toEqual("1.5B");
+});
+test("shortNumberString(22000000000)", () => {
+  expect(shortNumberString(22000000000)).toEqual("22B");
+});
+
+test("shortNumberString(333000000000)", () => {
+  expect(shortNumberString(333000000000)).toEqual("333B");
+});
+test("shortNumberString(1000000000000)", () => {
+  expect(shortNumberString(1000000000000)).toEqual("1T");
+});
+test("shortNumberString(1900000000000)", () => {
+  expect(shortNumberString(1900000000000)).toEqual("1.9T");
+});
