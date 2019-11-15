@@ -33,7 +33,7 @@ test("shortNumberString(10101)", () => {
 });
 
 test("shortNumberString(10999)", () => {
-  expect(shortNumberString(10999)).toEqual("11K");
+  expect(shortNumberString(10999)).toEqual("11.0K");
 });
 
 test("shortNumberString(11991)", () => {
