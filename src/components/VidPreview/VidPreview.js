@@ -1,8 +1,18 @@
 import React from "react";
 import "./VidPreview.scss";
 import { Image } from "semantic-ui-react";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+
+TimeAgo.locale(en);
+const timeAgo = new TimeAgo("en-US");
 
 export default function VidPreview({ horizontal, video }) {
+  function formatViewsAndTime(video) {
+    const published = new Date(video.snippet.publishedAt);
+    return `${video.statistics.viewCount} views · ${timeAgo.format(published)}`;
+  }
+
   if (!video) {
     return null;
   }
@@ -23,9 +33,9 @@ export default function VidPreview({ horizontal, video }) {
         <div className="vid-preview-metadata-container">
           <div className="channel-title">{video.snippet.channelTitle}</div>
 
-          <p>
-            {video.statistics.viewCount} views · {video.snippet.publishedAt}
-          </p>
+          <div>
+            <span>{formatViewsAndTime(video)}</span>
+          </div>
         </div>
       </div>
     </div>
