@@ -13,7 +13,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 13 seconds ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT13S")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -24,7 +24,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 1:00 min ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT1M")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -35,7 +35,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 1:11 minutes ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT1M11S")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -46,7 +46,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 10:13 minutes ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT10M13S")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -57,7 +57,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 03:05:15 hours ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT3H5M15S")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -68,7 +68,7 @@ describe("date-format ISO8601", () => {
   });
 
   test("parse 13:50:15 hours ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("PT13H50M15S")).toEqual({
       years: 0,
       months: 0,
       days: 0,
@@ -77,8 +77,9 @@ describe("date-format ISO8601", () => {
       seconds: 15
     });
   });
+
   test("parse 01:00:25:05 ISO8601 video duration string", () => {
-    expect(parseISO8601TimePattern("PT4S")).toEqual({
+    expect(parseISO8601TimePattern("P1DT25M5S")).toEqual({
       years: 0,
       months: 0,
       days: 1,
