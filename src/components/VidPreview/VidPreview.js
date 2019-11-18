@@ -12,17 +12,15 @@ const timeAgo = new TimeAgo("en-US");
 export default function VidPreview({ horizontal, video }) {
   const videoDuration = video.contentDetails
     ? getVideoDurationString(video.contentDetails.duration)
-    : null;
+    : "";
 
   const viewCount = video.statistics
     ? getShortNumberString(video.statistics.viewCount)
-    : null;
+    : "";
 
   function formatViewsAndTime(video) {
     const published = new Date(video.snippet.publishedAt);
-    if (video.statistics) {
-      return `${viewCount} views · ${timeAgo.format(published, "time")} ago`;
-    }
+    return `${viewCount} views · ${timeAgo.format(published, "time")} ago`;
   }
 
   if (!video) {
