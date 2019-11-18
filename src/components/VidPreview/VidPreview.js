@@ -3,14 +3,24 @@ import "./VidPreview.scss";
 import { Image } from "semantic-ui-react";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
+import { getVideoDurationString } from "../../services/date/date-format";
+import { getShortNumberString } from "../../services/number/number-format";
 
 TimeAgo.locale(en);
 const timeAgo = new TimeAgo("en-US");
 
 export default function VidPreview({ horizontal, video }) {
+  const videoDuration = getVideoDurationString(
+    video.contentDetails ? video.contentDetails.duration : null
+  );
+
   function formatViewsAndTime(video) {
     const published = new Date(video.snippet.publishedAt);
-    return `${video.statistics.viewCount} views · ${timeAgo.format(published)}`;
+    if (video.statistics) {
+      return `${getShortNumberString(
+        video.statistics.viewCount
+      )} views · ${timeAgo.format(published, "time")} ago`;
+    }
   }
 
   if (!video) {
@@ -22,7 +32,7 @@ export default function VidPreview({ horizontal, video }) {
       <div className="image-container">
         <Image src={video.snippet.thumbnails.medium.url} />
         <div className="time-label">
-          <span>{video.contentDetails.duration}</span>
+          <span>{videoDuration}</span>
         </div>
       </div>
 
