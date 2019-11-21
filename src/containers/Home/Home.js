@@ -11,6 +11,7 @@ function Home(props) {
   useEffect(() => {
     if (youtubeLibraryLoaded) {
       props.fetchMostPopularVideos();
+      props.fetchVideoCategories();
     }
   }, [props]);
 
@@ -30,7 +31,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const fetchMostPopularVideos = videoActions.mostPopular.request;
-  return bindActionCreators({ fetchMostPopularVideos }, dispatch);
+  const fetchVideoCategories = videoActions.categories.request;
+  return bindActionCreators(
+    { fetchMostPopularVideos, fetchVideoCategories },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
