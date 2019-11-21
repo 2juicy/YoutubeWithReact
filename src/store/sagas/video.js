@@ -27,6 +27,15 @@ export function* fetchMostPopularVideos(
   yield fetchEntity(request, videoActions.mostPopular);
 }
 
+export function* watchMostPopularVideosByCategory() {
+  while (true) {
+    const { categories } = yield take(
+      videoActions.MOST_POPULAR_BY_CATEGORY[REQUEST]
+    );
+    yield fork(fetchMostPopularVideosByCategory, categories);
+  }
+}
+
 export function* fetchMostPopularVideosByCategory(categories) {
   const req = categories.map(category => {
     const wrapper = ignoreErrors(
@@ -46,9 +55,9 @@ export function* fetchMostPopularVideosByCategory(categories) {
   }
 }
 
-export const fetchVideoCategories = () =>
-  fetchEntity(api.buildVideoCategoriesRequest, videoActions.categories);
-
 export function* watchVideoCategories() {
   yield takeEvery(videoActions.VIDEO_CATEGORIES[REQUEST], fetchVideoCategories);
 }
+
+export const fetchVideoCategories = () =>
+  fetchEntity(api.buildVideoCategoriesRequest, videoActions.categories);
