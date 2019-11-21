@@ -17,3 +17,10 @@ export const mostPopular = {
   success: res => createAction(MOST_POPULAR[SUCCESS], { res }),
   failure: res => createAction(MOST_POPULAR[FAILURE], { res })
 };
+
+export const VIDEO_CATEGORIES = createRequestTypes("VIDEO_CATEGORIES");
+export const categories = {
+  request: () => createAction(VIDEO_CATEGORIES[REQUEST]),
+  success: res => createAction(VIDEO_CATEGORIES[SUCCESS], { res }),
+  failure: res => createAction(VIDEO_CATEGORIES[FAILURE], { res })
+};
