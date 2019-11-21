@@ -65,3 +65,10 @@ export const getMostPopularVideos = createSelector(
     return mostPopular.items.map(videoId => videosById[videoId]);
   }
 );
+
+export const getVideoCategoryIds = createSelector(
+  state => state.videos.categories,
+  categories => {
+    return Object.keys(categories || {});
+  }
+);
