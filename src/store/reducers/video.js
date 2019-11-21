@@ -118,3 +118,17 @@ export const getVideoCategoryIds = createSelector(
     return Object.keys(categories || {});
   }
 );
+
+export const getVideosByCategory = createSelector(
+  state => state.video.byCategory,
+  state => state.video.byId,
+  state => state.video.categories,
+  (videosByCategory, videosById, categories) => {
+    return Object.keys(videosByCategory || {}).reduce((acc, categoryId) => {
+      const videoIds = videosByCategory[categoryId].items;
+      const categoryTitle = categories[categoryId];
+      acc[categoryTitle] = videoIds.map(videoId => videosById[videoId]);
+      return acc;
+    }, {});
+  }
+);
