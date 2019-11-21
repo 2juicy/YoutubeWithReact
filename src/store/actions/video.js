@@ -18,6 +18,10 @@ export const mostPopular = {
   failure: res => createAction(MOST_POPULAR[FAILURE], { res })
 };
 
+export const MOST_POPULAR_BY_CATEGORY = createRequestTypes(
+  "MOST_POPULAR_BY_CATEGORY"
+);
+
 export const VIDEO_CATEGORIES = createRequestTypes("VIDEO_CATEGORIES");
 export const categories = {
   request: () => createAction(VIDEO_CATEGORIES[REQUEST]),

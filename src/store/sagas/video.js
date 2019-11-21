@@ -1,4 +1,4 @@
-import { fork, take, takeEvery, call, all, put } from "redux-saga/effects";
+import { fork, take, takeEvery } from "redux-saga/effects";
 import * as api from "../api/youtube-api";
 import * as videoActions from "../actions/video";
 import { REQUEST } from "../actions";
