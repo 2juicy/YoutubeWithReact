@@ -13,3 +13,10 @@ export function* fetchEntity(request, entity, ...args) {
     yield put(entity.failure(err, ...args));
   }
 }
+
+export function ignoreErrors(fn, ...args) {
+  return () => {
+    const ignoreErrorCallback = res => res;
+    return fn(...args).then(ignoreErrorCallback, ignoreErrorCallback);
+  };
+}

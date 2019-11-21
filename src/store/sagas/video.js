@@ -1,8 +1,8 @@
-import { fork, take, takeEvery } from "redux-saga/effects";
+import { fork, take, takeEvery, call, put, all } from "redux-saga/effects";
 import * as api from "../api/youtube-api";
 import * as videoActions from "../actions/video";
 import { REQUEST } from "../actions";
-import { fetchEntity } from "./index";
+import { fetchEntity, ignoreErrors } from "./index";
 
 export function* watchMostPopularVideos() {
   while (true) {
@@ -25,6 +25,25 @@ export function* fetchMostPopularVideos(
     nextPageToken
   );
   yield fetchEntity(request, videoActions.mostPopular);
+}
+
+export function* fetchMostPopularVideosByCategory(categories) {
+  const req = categories.map(category => {
+    const wrapper = ignoreErrors(
+      api.buildMostPopularVideosRequest,
+      12,
+      false,
+      null,
+      category
+    );
+    return call(wrapper);
+  });
+  try {
+    const res = yield all(req);
+    yield put(videoActions.mostPopularByCategory.success(res, categories));
+  } catch (err) {
+    yield put(videoActions.mostPopularByCategory.failure(err));
+  }
 }
 
 export const fetchVideoCategories = () =>
