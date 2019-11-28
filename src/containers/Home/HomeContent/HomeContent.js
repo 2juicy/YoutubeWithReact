@@ -1,7 +1,10 @@
 import React from "react";
 import "./HomeContent.scss";
 import VidGrid from "../../../components/VidGrid/VidGrid";
-import { getMostPopularVideos } from "../../../store/reducers/video";
+import {
+  getMostPopularVideos,
+  getVideosByCategory
+} from "../../../store/reducers/video";
 import { connect } from "react-redux";
 
 function HomeContent(props) {
@@ -22,6 +25,7 @@ function HomeContent(props) {
 
 function mapStateToProps(state) {
   return {
+    // videosByCategory: getVideosByCategory(state),
     mostPopularVideos: getMostPopularVideos(state)
   };
 }

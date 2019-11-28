@@ -96,8 +96,14 @@ function groupVideosByIdAndCategory(res) {
   videos.forEach(video => {
     byId[video.id] = video;
     const items = byCategory.items;
-    items ? items.push(video.id) : (byCategory.id = [video.id]);
+    if (items && items) {
+      items.push(video.id);
+    } else {
+      byCategory.items = [video.id];
+    }
   });
+
+  return { byId, byCategory };
 }
 
 // Selectors

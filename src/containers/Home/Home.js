@@ -1,36 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import HomeContent from "./HomeContent/HomeContent";
 import { connect } from "react-redux";
 import * as videoActions from "../../store/actions/video";
 import { bindActionCreators } from "redux";
 import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
-import { youtubeLibraryLoaded } from "../../store/actions/api";
 import { getVideoCategoryIds } from "../../store/reducers/video";
 
-function Home(props) {
-  // const [categoryIndex, setCategoryIndex] = useState(0);
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categoryIndex: 0
+    };
+  }
 
-  useEffect(() => {
-    if (youtubeLibraryLoaded) {
-      props.fetchMostPopularVideos();
-      props.fetchVideoCategories();
+  componentDidMount() {
+    if (this.props.youtubeLibraryLoaded) {
+      this.fetchCategoriesAndMostPopularVideos();
     }
-  }, []);
+  }
 
-  // useEffect(() => {
-  //   effect;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, [props]);
+  componentDidUpdate(prevProps) {
+    if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
+      this.fetchCategoriesAndMostPopularVideos();
+    } else if (this.props.videoCategories !== prevProps.videoCategories) {
+      this.fetchVideosByCategory();
+    }
+  }
 
-  return (
-    <>
-      <Sidebar />
-      <HomeContent />
-    </>
-  );
+  fetchVideosByCategory() {
+    const categoryStartIndex = this.state.categoryIndex;
+    const categories = this.props.videoCategories.slice(
+      categoryStartIndex,
+      categoryStartIndex + 3
+    );
+    this.props.fetchMostPopularVideosByCategory(categories);
+    this.setState(prevState => {
+      return {
+        categoryIndex: prevState.categoryIndex + 3
+      };
+    });
+  }
+
+  fetchCategoriesAndMostPopularVideos() {
+    this.props.fetchMostPopularVideos();
+    this.props.fetchVideoCategories();
+  }
+
+  render() {
+    return (
+      <>
+        <Sidebar />
+        <HomeContent />
+      </>
+    );
+  }
 }
 
 function mapStateToProps(state) {
