@@ -18,6 +18,13 @@ export const mostPopular = {
   failure: res => createAction(MOST_POPULAR[FAILURE], { res })
 };
 
+export const VIDEO_CATEGORIES = createRequestTypes("VIDEO_CATEGORIES");
+export const categories = {
+  request: () => createAction(VIDEO_CATEGORIES[REQUEST]),
+  success: res => createAction(VIDEO_CATEGORIES[SUCCESS], { res }),
+  failure: res => createAction(VIDEO_CATEGORIES[FAILURE], { res })
+};
+
 export const MOST_POPULAR_BY_CATEGORY = createRequestTypes(
   "MOST_POPULAR_BY_CATEGORY"
 );
@@ -27,11 +34,4 @@ export const mostPopularByCategory = {
   success: (res, categories) =>
     createAction(MOST_POPULAR_BY_CATEGORY[SUCCESS], { res, categories }),
   failure: res => createAction(MOST_POPULAR_BY_CATEGORY[FAILURE], res)
-};
-
-export const VIDEO_CATEGORIES = createRequestTypes("VIDEO_CATEGORIES");
-export const categories = {
-  request: () => createAction(VIDEO_CATEGORIES[REQUEST]),
-  success: res => createAction(VIDEO_CATEGORIES[SUCCESS], { res }),
-  failure: res => createAction(VIDEO_CATEGORIES[FAILURE], { res })
 };

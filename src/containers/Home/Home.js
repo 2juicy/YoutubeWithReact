@@ -35,6 +35,7 @@ class Home extends React.Component {
       categoryStartIndex,
       categoryStartIndex + 3
     );
+    console.log(categories);
     this.props.fetchMostPopularVideosByCategory(categories);
     this.setState(prevState => {
       return {

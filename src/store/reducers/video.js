@@ -7,7 +7,7 @@ import { SUCCESS } from "../actions";
 import { createSelector } from "reselect";
 
 const initialState = {
-  Id: {},
+  byId: {},
   mostPopular: {},
   categories: {}
 };
@@ -21,7 +21,7 @@ export default function videos(state = initialState, action) {
     case MOST_POPULAR_BY_CATEGORY[SUCCESS]:
       return reduceFetchMostPopularVideosByCategory(
         action.res,
-        action.categies,
+        action.categories,
         state
       );
     default:
@@ -49,7 +49,7 @@ function reduceFetchMostPopularVideos(res, prevState) {
   return {
     ...prevState,
     mostPopular,
-    Id: { ...prevState.Id, ...videoMap }
+    byId: { ...prevState.byId, ...videoMap }
   };
 }
 
@@ -64,15 +64,20 @@ function reduceFetchVideoCategories(res, prevState) {
   };
 }
 
-function reduceFetchMostPopularVideosByCategory(res, categories, prevState) {
+function reduceFetchMostPopularVideosByCategory(
+  responses,
+  categories,
+  prevState
+) {
   let videoMap = {};
   let byCategoryMap = {};
 
-  res.forEach((res, index) => {
+  responses.forEach((res, index) => {
     if (res.status === 400) return;
 
     const categoryId = categories[index];
     const { byId, byCategory } = groupVideosByIdAndCategory(res.result);
+    console.log(byCategory);
     videoMap = { ...videoMap, ...byId };
     byCategoryMap[categoryId] = byCategory;
   });
@@ -108,7 +113,7 @@ function groupVideosByIdAndCategory(res) {
 
 // Selectors
 export const getMostPopularVideos = createSelector(
-  state => state.videos.Id,
+  state => state.videos.byId,
   state => state.videos.mostPopular,
   (videosById, mostPopular) => {
     if (!mostPopular || !mostPopular.items) {

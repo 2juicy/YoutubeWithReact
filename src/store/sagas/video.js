@@ -59,5 +59,8 @@ export function* watchVideoCategories() {
   yield takeEvery(videoActions.VIDEO_CATEGORIES[REQUEST], fetchVideoCategories);
 }
 
-export const fetchVideoCategories = () =>
-  fetchEntity(api.buildVideoCategoriesRequest, videoActions.categories);
+export const fetchVideoCategories = fetchEntity.bind(
+  null,
+  api.buildVideoCategoriesRequest,
+  videoActions.categories
+);
