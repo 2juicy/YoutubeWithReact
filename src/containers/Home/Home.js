@@ -5,7 +5,11 @@ import { connect } from "react-redux";
 import * as videoActions from "../../store/actions/video";
 import { bindActionCreators } from "redux";
 import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
-import { getVideoCategoryIds } from "../../store/reducers/video";
+import {
+  getVideoCategoryIds,
+  videosByCategoryLoaded,
+  videoCategoriesLoaded
+} from "../../store/reducers/video";
 
 class Home extends React.Component {
   state = {
@@ -26,6 +30,7 @@ class Home extends React.Component {
     }
   }
 
+  // Functions for fetching
   fetchVideosByCategory() {
     const categoryStartIndex = this.state.categoryIndex;
     const categories = this.props.videoCategories.slice(
@@ -45,11 +50,27 @@ class Home extends React.Component {
     this.props.fetchVideoCategories();
   }
 
+  // Functions for infinite scroll
+  bottomReachedCallback = () => {
+    if (!this.props.videoCategoriesLoaded) return;
+    this.fetchVideosByCategory();
+  };
+
+  showLoader() {
+    if (this.props.videoCategoriesLoaded && this.props.videosByCategoryLoaded) {
+      return this.state.categoryIndex < this.props.videoCategories.length;
+    }
+    return false;
+  }
+
   render() {
     return (
       <>
         <Sidebar />
-        <HomeContent />
+        <HomeContent
+          bottomReachedCallback={this.bottomReachedCallback}
+          showLoader={this.showLoader}
+        />
       </>
     );
   }
@@ -58,7 +79,9 @@ class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
-    videoCategories: getVideoCategoryIds(state)
+    videoCategories: getVideoCategoryIds(state),
+    videoCategoriesLoaded: videoCategoriesLoaded(state),
+    videoByCategoryLoaded: videosByCategoryLoaded(state)
   };
 }
 
