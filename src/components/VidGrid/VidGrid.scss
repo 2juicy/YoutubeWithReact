@@ -20,4 +20,8 @@
   & > * {
     margin: 0 0 24px 4px;
   }
+
+  &:nth-last-child(2) {
+    border-bottom: 0px solid !important;
+  }
 }
