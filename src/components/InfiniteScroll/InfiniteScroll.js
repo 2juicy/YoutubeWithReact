@@ -1,6 +1,6 @@
 import React from "react";
 import "./InfiniteScroll.scss";
-import Waypoint from "react-waypoint";
+import { Waypoint } from "react-waypoint";
 import { Loader } from "semantic-ui-react";
 
 export default function InfiniteScroll(props) {

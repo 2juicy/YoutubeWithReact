@@ -6,6 +6,7 @@ import {
   getVideosByCategory
 } from "../../../store/reducers/video";
 import { connect } from "react-redux";
+import InfiniteScroll from "../../../components/InfiniteScroll/InfiniteScroll";
 
 function HomeContent(props) {
   const AMOUNT_TRENDING_VIDEOS = 12;
@@ -28,8 +29,13 @@ function HomeContent(props) {
   return (
     <div className="home-content">
       <div className="responsive-vid-grid-container">
-        <VidGrid title="Trending" videos={trendingVideos} />
-        {categoryGrids}
+        <InfiniteScroll
+          bottomReachedCallback={props.bottomReachedCallback}
+          showLoader={props.showLoader}
+        >
+          <VidGrid title="Trending" videos={trendingVideos} />
+          {categoryGrids}
+        </InfiniteScroll>
       </div>
     </div>
   );
