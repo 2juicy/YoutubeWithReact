@@ -8,12 +8,9 @@ import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
 import { getVideoCategoryIds } from "../../store/reducers/video";
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categoryIndex: 0
-    };
-  }
+  state = {
+    categoryIndex: 0
+  };
 
   componentDidMount() {
     if (this.props.youtubeLibraryLoaded) {
@@ -35,7 +32,6 @@ class Home extends React.Component {
       categoryStartIndex,
       categoryStartIndex + 3
     );
-    console.log(categories);
     this.props.fetchMostPopularVideosByCategory(categories);
     this.setState(prevState => {
       return {

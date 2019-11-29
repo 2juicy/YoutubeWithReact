@@ -77,7 +77,6 @@ function reduceFetchMostPopularVideosByCategory(
 
     const categoryId = categories[index];
     const { byId, byCategory } = groupVideosByIdAndCategory(res.result);
-    console.log(byCategory);
     videoMap = { ...videoMap, ...byId };
     byCategoryMap[categoryId] = byCategory;
   });
