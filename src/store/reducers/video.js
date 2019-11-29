@@ -130,9 +130,9 @@ export const getVideoCategoryIds = createSelector(
 );
 
 export const getVideosByCategory = createSelector(
-  state => state.video.byCategory,
-  state => state.video.byId,
-  state => state.video.categories,
+  state => state.videos.byCategory,
+  state => state.videos.byId,
+  state => state.videos.categories,
   (videosByCategory, videosById, categories) => {
     return Object.keys(videosByCategory || {}).reduce((acc, categoryId) => {
       const videoIds = videosByCategory[categoryId].items;

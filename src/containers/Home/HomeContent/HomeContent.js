@@ -13,11 +13,23 @@ function HomeContent(props) {
     0,
     AMOUNT_TRENDING_VIDEOS
   );
+  const categoryGrids = getVideoGridsForCategories();
+
+  function getVideoGridsForCategories() {
+    const categoryTitles = Object.keys(props.videosByCategory || {});
+    return categoryTitles.map(categoryTitle => {
+      const videos = props.videosByCategory[categoryTitle];
+      return (
+        <VidGrid title={categoryTitle} videos={videos} key={categoryTitle} />
+      );
+    });
+  }
 
   return (
     <div className="home-content">
       <div className="responsive-vid-grid-container">
         <VidGrid title="Trending" videos={trendingVideos} />
+        {categoryGrids}
       </div>
     </div>
   );
@@ -25,7 +37,7 @@ function HomeContent(props) {
 
 function mapStateToProps(state) {
   return {
-    // videosByCategory: getVideosByCategory(state),
+    videosByCategory: getVideosByCategory(state),
     mostPopularVideos: getMostPopularVideos(state)
   };
 }
