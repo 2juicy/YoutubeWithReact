@@ -16,12 +16,6 @@ class Home extends React.Component {
     categoryIndex: 0
   };
 
-  componentDidMount() {
-    if (this.props.youtubeLibraryLoaded) {
-      this.fetchCategoriesAndMostPopularVideos();
-    }
-  }
-
   componentDidUpdate(prevProps) {
     if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
       this.fetchCategoriesAndMostPopularVideos();
