@@ -58,7 +58,8 @@ class Home extends React.Component {
 
   showLoader() {
     if (this.props.videoCategoriesLoaded && this.props.videosByCategoryLoaded) {
-      return this.state.categoryIndex < this.props.videoCategories.length;
+      // Due to 404 requests we stop the loader at 18.
+      return this.state.categoryIndex < 18;
     }
     return false;
   }
@@ -69,7 +70,7 @@ class Home extends React.Component {
         <Sidebar />
         <HomeContent
           bottomReachedCallback={this.bottomReachedCallback}
-          showLoader={this.showLoader}
+          showLoader={this.showLoader()}
         />
       </>
     );
@@ -81,7 +82,7 @@ function mapStateToProps(state) {
     youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
     videoCategories: getVideoCategoryIds(state),
     videoCategoriesLoaded: videoCategoriesLoaded(state),
-    videoByCategoryLoaded: videosByCategoryLoaded(state)
+    videosByCategoryLoaded: videosByCategoryLoaded(state)
   };
 }
 
