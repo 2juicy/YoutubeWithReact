@@ -52,8 +52,8 @@ class Home extends React.Component {
 
   showLoader() {
     if (this.props.videoCategoriesLoaded && this.props.videosByCategoryLoaded) {
-      // Due to 404 requests we stop the loader at 18.
-      return this.state.categoryIndex < 18;
+      // Due to 404 requests we stop the loader at 19.
+      return this.state.categoryIndex < 19;
     }
     return false;
   }
