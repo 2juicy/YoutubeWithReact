@@ -14,11 +14,10 @@ import {
 
 function Home(props) {
   const [categoryIndex, setCategoryIndex] = useState(0);
-  const prevYoutubeLibraryLoaded = usePrevious(props.youtubeLibraryLoaded);
   const prevVideoCategories = usePrevious(props.videoCategories);
 
   useEffect(() => {
-    if (props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded) {
+    if (props.youtubeLibraryLoaded) {
       props.fetchMostPopularVideos();
       props.fetchVideoCategories();
     } else if (
