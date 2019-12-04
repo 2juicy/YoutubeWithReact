@@ -17,22 +17,11 @@ function Home(props) {
   const prevYoutubeLibraryLoaded = usePrevious(props.youtubeLibraryLoaded);
   const prevVideoCategories = usePrevious(props.videoCategories);
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
-  //     this.fetchCategoriesAndMostPopularVideos();
-  //   } else if (this.props.videoCategories !== prevProps.videoCategories) {
-  //     this.fetchVideosByCategory();
-  //   }
-  // }
-
   useEffect(() => {
-    console.log("this");
     if (props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded) {
-      console.log("library");
       props.fetchMostPopularVideos();
       props.fetchVideoCategories();
     } else if (props.videoCategories !== prevVideoCategories) {
-      console.log("fetch");
       fetchVideosByCategory();
     }
   });
