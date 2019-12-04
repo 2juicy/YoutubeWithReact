@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import HomeContent from "./HomeContent/HomeContent";
 import { connect } from "react-redux";
@@ -11,69 +11,64 @@ import {
   videoCategoriesLoaded
 } from "../../store/reducers/video";
 
-function Home(props) {
-  const [categoryIndex, setCategoryIndex] = useState(0);
+class Home extends React.Component {
+  state = {
+    categoryIndex: 0
+  };
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
-  //     this.fetchCategoriesAndMostPopularVideos();
-  //   } else if (this.props.videoCategories !== prevProps.videoCategories) {
-  //     this.fetchVideosByCategory();
-  //   }
-  // }
-
-  useEffect(() => {
-    console.log("this");
-    if (props.youtubeLibraryLoaded) {
-      fetchCategoriesAndMostPopularVideos();
+  componentDidUpdate(prevProps) {
+    if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
+      this.fetchCategoriesAndMostPopularVideos();
+    } else if (this.props.videoCategories !== prevProps.videoCategories) {
+      this.fetchVideosByCategory();
     }
-  }, [props.youtubeLibraryLoaded]);
+  }
 
   // Functions for fetching
-  const fetchVideosByCategory = useCallback(() => {
-    const categoryStartIndex = categoryIndex;
-    const categories = props.videoCategories.slice(
+  fetchVideosByCategory() {
+    const categoryStartIndex = this.state.categoryIndex;
+    const categories = this.props.videoCategories.slice(
       categoryStartIndex,
       categoryStartIndex + 3
     );
-    props.fetchMostPopularVideosByCategory(categories);
-    setCategoryIndex(categoryIndex + 3);
-  }, [categoryIndex, props]);
+    this.props.fetchMostPopularVideosByCategory(categories);
+    this.setState(prevState => {
+      return {
+        categoryIndex: prevState.categoryIndex + 3
+      };
+    });
+  }
 
-  // Updates videos when videoCategories updates
-  useEffect(() => {
-    console.log("fetch categories");
-    fetchVideosByCategory();
-  }, [props.videoCategories]);
-
-  const fetchCategoriesAndMostPopularVideos = () => {
-    props.fetchMostPopularVideos();
-    props.fetchVideoCategories();
-  };
+  fetchCategoriesAndMostPopularVideos() {
+    this.props.fetchMostPopularVideos();
+    this.props.fetchVideoCategories();
+  }
 
   // Functions for infinite scroll
-  const bottomReachedCallback = () => {
-    if (!props.videoCategoriesLoaded) return;
-    fetchVideosByCategory();
+  bottomReachedCallback = () => {
+    if (!this.props.videoCategoriesLoaded) return;
+    this.fetchVideosByCategory();
   };
 
-  const showLoader = () => {
-    if (props.videoCategoriesLoaded && props.videosByCategoryLoaded) {
+  showLoader() {
+    if (this.props.videoCategoriesLoaded && this.props.videosByCategoryLoaded) {
       // Due to 404 requests we stop the loader at 18.
-      return categoryIndex < 18;
+      return this.state.categoryIndex < 18;
     }
     return false;
-  };
+  }
 
-  return (
-    <>
-      <Sidebar />
-      <HomeContent
-        bottomReachedCallback={bottomReachedCallback}
-        showLoader={showLoader()}
-      />
-    </>
-  );
+  render() {
+    return (
+      <>
+        <Sidebar />
+        <HomeContent
+          bottomReachedCallback={this.bottomReachedCallback}
+          showLoader={this.showLoader()}
+        />
+      </>
+    );
+  }
 }
 
 function mapStateToProps(state) {
