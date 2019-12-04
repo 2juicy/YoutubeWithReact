@@ -17,9 +17,13 @@ class Home extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
+    console.log("component updated");
     if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
-      this.fetchCategoriesAndMostPopularVideos();
+      console.log("library loaded");
+      this.props.fetchMostPopularVideos();
+      this.props.fetchVideoCategories();
     } else if (this.props.videoCategories !== prevProps.videoCategories) {
+      console.log("fetch");
       this.fetchVideosByCategory();
     }
   }
@@ -37,11 +41,6 @@ class Home extends React.Component {
         categoryIndex: prevState.categoryIndex + 3
       };
     });
-  }
-
-  fetchCategoriesAndMostPopularVideos() {
-    this.props.fetchMostPopularVideos();
-    this.props.fetchVideoCategories();
   }
 
   // Functions for infinite scroll
