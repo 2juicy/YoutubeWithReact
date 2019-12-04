@@ -3,7 +3,7 @@ import CommentsHeader from "./CommentsHeader/CommentsHeader";
 import Comment from "./Comment/Comment";
 import AddComment from "./AddComment/AddComment";
 
-export default function Comments({ amount }) {
+function Comments({ amount }) {
   return (
     <div>
       <CommentsHeader amount={amount} />
@@ -15,3 +15,5 @@ export default function Comments({ amount }) {
     </div>
   );
 }
+
+export default React.memo(Comments);

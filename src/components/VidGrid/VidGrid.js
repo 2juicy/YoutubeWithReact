@@ -2,7 +2,7 @@ import React from "react";
 import "./VidGrid.scss";
 import VidPreview from "../VidPreview/VidPreview";
 
-export default function VidGrid({ title, videos }) {
+function VidGrid({ title, videos }) {
   if (!videos || !videos.length) {
     return null;
   }
@@ -21,3 +21,5 @@ export default function VidGrid({ title, videos }) {
     </>
   );
 }
+
+export default React.memo(VidGrid);

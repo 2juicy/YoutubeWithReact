@@ -2,7 +2,7 @@ import React from "react";
 import "./CommentsHeader.scss";
 import { Button, Icon } from "semantic-ui-react";
 
-export default function Comments({ amount }) {
+function CommentsHeader({ amount }) {
   return (
     <div className="comment-header">
       <h4>{amount} Comments</h4>
@@ -13,3 +13,5 @@ export default function Comments({ amount }) {
     </div>
   );
 }
+
+export default React.memo(CommentsHeader);
