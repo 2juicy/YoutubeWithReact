@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { usePrevious } from "./usePrevious";
+import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import HomeContent from "./HomeContent/HomeContent";
 import { connect } from "react-redux";
@@ -12,65 +11,64 @@ import {
   videoCategoriesLoaded
 } from "../../store/reducers/video";
 
-function Home(props) {
-  const [categoryIndex, setCategoryIndex] = useState(0);
-  const prevYoutubeLibraryLoaded = usePrevious(props.youtubeLibraryLoaded);
-  const prevVideoCategories = usePrevious(props.videoCategories);
+class Home extends React.Component {
+  state = {
+    categoryIndex: 0
+  };
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
-  //     this.fetchCategoriesAndMostPopularVideos();
-  //   } else if (this.props.videoCategories !== prevProps.videoCategories) {
-  //     this.fetchVideosByCategory();
-  //   }
-  // }
-
-  useEffect(() => {
-    console.log("this");
-    if (props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded) {
-      console.log("library");
-      props.fetchMostPopularVideos();
-      props.fetchVideoCategories();
-    } else if (props.videoCategories !== prevVideoCategories) {
-      console.log("fetch");
-      fetchVideosByCategory();
+  componentDidUpdate(prevProps) {
+    if (this.props.youtubeLibraryLoaded !== prevProps.youtubeLibraryLoaded) {
+      this.fetchCategoriesAndMostPopularVideos();
+    } else if (this.props.videoCategories !== prevProps.videoCategories) {
+      this.fetchVideosByCategory();
     }
-  });
+  }
 
   // Functions for fetching
-  const fetchVideosByCategory = () => {
-    const categoryStartIndex = categoryIndex;
-    const categories = props.videoCategories.slice(
+  fetchVideosByCategory() {
+    const categoryStartIndex = this.state.categoryIndex;
+    const categories = this.props.videoCategories.slice(
       categoryStartIndex,
       categoryStartIndex + 3
     );
-    props.fetchMostPopularVideosByCategory(categories);
-    setCategoryIndex(categoryIndex + 3);
-  };
+    this.props.fetchMostPopularVideosByCategory(categories);
+    this.setState(prevState => {
+      return {
+        categoryIndex: prevState.categoryIndex + 3
+      };
+    });
+  }
+
+  fetchCategoriesAndMostPopularVideos() {
+    this.props.fetchMostPopularVideos();
+    this.props.fetchVideoCategories();
+  }
 
   // Functions for infinite scroll
-  const bottomReachedCallback = () => {
-    if (!props.videoCategoriesLoaded) return;
-    fetchVideosByCategory();
+  bottomReachedCallback = () => {
+    if (!this.props.videoCategoriesLoaded) return;
+    this.fetchVideosByCategory();
   };
 
-  const showLoader = () => {
-    if (props.videoCategoriesLoaded && props.videosByCategoryLoaded) {
+  showLoader() {
+    if (this.props.videoCategoriesLoaded && this.props.videosByCategoryLoaded) {
       // Due to 404 requests we stop the loader at 19.
-      return categoryIndex < 19;
+      return this.state.categoryIndex < 19;
     }
     return false;
-  };
+  }
 
-  return (
-    <>
-      <Sidebar />
-      <HomeContent
-        bottomReachedCallback={bottomReachedCallback}
-        showLoader={showLoader()}
-      />
-    </>
-  );
+  render() {
+    return (
+      <>
+        <Sidebar />
+        <HomeContent
+          bottomReachedCallback={this.bottomReachedCallback}
+          showLoader={this.showLoader()}
+        />
+      </>
+    );
+  }
 }
 
 function mapStateToProps(state) {
