@@ -4,7 +4,6 @@ import { Button, Image } from "semantic-ui-react";
 
 export default function VidInfoBox() {
   const [collapse, setCollapse] = useState(true);
-  const collapsed = collapse ? "collapsed" : "expanded";
   const buttonTitle = collapse ? "Show More" : "Show Less";
 
   return (
@@ -20,7 +19,7 @@ export default function VidInfoBox() {
       </div>
       <Button color="youtube">12.3K Subscribe</Button>
       <div className="vid-description">
-        <div className={collapsed}>
+        <div className={collapse ? "collapsed" : "expanded"}>
           <p>Paragraph...</p>
           <p>Paragraph...</p>
           <p>Paragraph...</p>

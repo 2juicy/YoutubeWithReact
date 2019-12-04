@@ -9,7 +9,7 @@ import { getShortNumberString } from "../../services/number/number-format";
 TimeAgo.locale(en);
 const timeAgo = new TimeAgo("en-US");
 
-export default function VidPreview({ horizontal, video }) {
+function VidPreview({ horizontal, video }) {
   const videoDuration = video.contentDetails
     ? getVideoDurationString(video.contentDetails.duration)
     : "";
@@ -51,3 +51,5 @@ export default function VidPreview({ horizontal, video }) {
     </div>
   );
 }
+
+export default React.memo(VidPreview);
