@@ -19,14 +19,12 @@ function Home(props) {
 
   useEffect(() => {
     if (props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded) {
-      console.log("library");
       props.fetchMostPopularVideos();
       props.fetchVideoCategories();
     } else if (
       prevVideoCategories &&
       props.videoCategories !== prevVideoCategories
     ) {
-      console.log("fetch");
       fetchVideosByCategory();
     }
   });
