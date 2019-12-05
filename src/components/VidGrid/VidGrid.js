@@ -15,7 +15,12 @@ function VidGrid({ title, videos }) {
 
       <div className="vid-grid">
         {videos.map(video => (
-          <VidPreview video={video} key={video.id} />
+          <VidPreview
+            video={video}
+            key={video.id}
+            pathname="/watch"
+            search={`?v=${video.id}`}
+          />
         ))}
       </div>
     </>
