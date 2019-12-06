@@ -6,11 +6,11 @@ import { usePrevious } from "../../hooks/usePrevious";
 
 export default function Layout(props) {
   const location = useLocation();
-  console.log(location);
+  const prevLocation = usePrevious(location);
 
-  // useEffect(() => {
-
-  // }, [])
+  useEffect(() => {
+    if (location !== prevLocation && window) window.scrollTo(0, 0);
+  });
 
   return (
     <div className="layout">
