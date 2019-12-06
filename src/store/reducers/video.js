@@ -6,6 +6,7 @@ import {
 import { SUCCESS } from "../actions";
 import { createSelector } from "reselect";
 import { WATCH_DETAILS } from "../actions/watch";
+import { VIDEO_LIST_RESPONSE } from "../api/youtube-response-types";
 
 const initialState = {
   byId: {},
@@ -94,7 +95,7 @@ function reduceFetchMostPopularVideosByCategory(
 
 function reduceWatchDetails(responses, prevState) {
   const videoDetailResponse = responses.find(
-    res => res.result.kind === "youtube#videoListResponse"
+    res => res.result.kind === VIDEO_LIST_RESPONSE
   );
   const video = videoDetailResponse.result.items[0];
 
