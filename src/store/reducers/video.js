@@ -5,6 +5,7 @@ import {
 } from "../actions/video";
 import { SUCCESS } from "../actions";
 import { createSelector } from "reselect";
+import { WATCH_DETAILS } from "../actions/watch";
 
 const initialState = {
   byId: {},
@@ -24,11 +25,14 @@ export default function videos(state = initialState, action) {
         action.categories,
         state
       );
+    case WATCH_DETAILS[SUCCESS]:
+      return reduceWatchDetails(action.res, state);
     default:
       return state;
   }
 }
 
+// Reducers
 function reduceFetchMostPopularVideos(res, prevState) {
   const videoMap = res.items.reduce((acc, video) => {
     acc[video.id] = video;
@@ -88,6 +92,23 @@ function reduceFetchMostPopularVideosByCategory(
   };
 }
 
+function reduceWatchDetails(responses, prevState) {
+  let byIdEntry = {};
+  if (responses && responses[0].result.items) {
+    const video = responses[0].result.items[0];
+    byIdEntry = { [video.id]: video };
+  }
+
+  return {
+    ...prevState,
+    byId: {
+      ...prevState.byId,
+      ...byIdEntry
+    }
+  };
+}
+
+// Grouping function
 function groupVideosByIdAndCategory(res) {
   const videos = res.items;
   const byId = {};
