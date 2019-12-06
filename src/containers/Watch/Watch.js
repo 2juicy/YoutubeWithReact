@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Watch.scss";
 import Video from "../../components/Video/Video";
 import RelatedVids from "../../components/RelatedVids/RelatedVids";
@@ -11,13 +11,20 @@ import * as watchActions from "../../store/actions/watch";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-function Watch() {
+function Watch(props) {
+  // Function for finding URL then fetch with hook
   const location = useLocation();
-
-  const getVideoId = () => {
+  function getVideoId() {
     const searchParams = new URLSearchParams(location.search);
     return searchParams.get("v");
-  };
+  }
+
+  useEffect(() => {
+    if (props.youtubeLibraryLoaded) {
+      const videoId = getVideoId();
+      props.fetchWatchDetails(videoId, props.channelId);
+    }
+  });
 
   return (
     <div className="watch-grid">
