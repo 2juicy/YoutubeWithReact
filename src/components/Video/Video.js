@@ -12,10 +12,10 @@ export default function Video({ id }) {
         <iframe
           className="video-player"
           src={`https://www.youtube.com/embed/${id}?autoplay=1`}
-          frameborder="0"
+          frameBorder="0"
           title="video"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>
