@@ -18,17 +18,18 @@ function Watch(props) {
     const searchParams = new URLSearchParams(location.search);
     return searchParams.get("v");
   }
+  const videoId = getVideoId();
 
+  // ComponentDidUpdate
   useEffect(() => {
     if (props.youtubeLibraryLoaded) {
-      const videoId = getVideoId();
-      props.fetchWatchDetails(videoId, props.channelId);
+      props.fetchWatchDetails(videoId);
     }
   });
 
   return (
     <div className="watch-grid">
-      <Video className="video" id="L14hxW2SN68" />
+      <Video className="video" id={videoId} />
       <VidMetaData className="metadata" views={9999} />
       <VidInfoBox />
       <Comments />
