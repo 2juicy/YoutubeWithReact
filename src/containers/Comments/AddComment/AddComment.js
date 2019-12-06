@@ -11,11 +11,7 @@ export default function AddComment() {
         circular
       />
       <Form>
-        <Form.TextArea
-          control={TextArea}
-          autoHeight
-          placeholder="Add a public comment"
-        />
+        <Form.TextArea control={TextArea} placeholder="Add a public comment" />
       </Form>
     </div>
   );
