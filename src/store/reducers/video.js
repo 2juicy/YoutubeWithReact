@@ -93,17 +93,16 @@ function reduceFetchMostPopularVideosByCategory(
 }
 
 function reduceWatchDetails(responses, prevState) {
-  let byIdEntry = {};
-  if (responses && responses[0].result.items) {
-    const video = responses[0].result.items[0];
-    byIdEntry = { [video.id]: video };
-  }
+  const videoDetailResponse = responses.find(
+    res => res.result.kind === "youtube#videoListResponse"
+  );
+  const video = videoDetailResponse.result.items[0];
 
   return {
     ...prevState,
     byId: {
       ...prevState.byId,
-      ...byIdEntry
+      [video.id]: video
     }
   };
 }
