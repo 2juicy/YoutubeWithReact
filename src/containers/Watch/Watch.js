@@ -6,8 +6,12 @@ import VidMetaData from "../../components/VidMetaData/VidMetaData";
 import VidInfoBox from "../../components/VidInfoBox/VidInfoBox";
 import Comments from "../Comments/Comments";
 import { useLocation } from "react-router-dom";
+import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
+import * as watchActions from "../../store/actions/watch";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-export default function Watch() {
+function Watch() {
   const location = useLocation();
 
   const getVideoId = () => {
@@ -25,3 +29,14 @@ export default function Watch() {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  youtubeLibraryLoaded: getYoutubeLibraryLoaded(state)
+});
+
+const mapDispatchToProps = dispatch => {
+  const fetchWatchDetails = watchActions.details.request;
+  return bindActionCreators({ fetchWatchDetails }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Watch);
