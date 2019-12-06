@@ -64,14 +64,12 @@ function Home(props) {
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
-    videoCategories: getVideoCategoryIds(state),
-    videoCategoriesLoaded: videoCategoriesLoaded(state),
-    videosByCategoryLoaded: videosByCategoryLoaded(state)
-  };
-}
+const mapStateToProps = state => ({
+  youtubeLibraryLoaded: getYoutubeLibraryLoaded(state),
+  videoCategories: getVideoCategoryIds(state),
+  videoCategoriesLoaded: videoCategoriesLoaded(state),
+  videosByCategoryLoaded: videosByCategoryLoaded(state)
+});
 
 function mapDispatchToProps(dispatch) {
   const fetchMostPopularVideos = videoActions.mostPopular.request;

@@ -42,9 +42,9 @@ const mapStateToProps = state => ({
   youtubeLibraryLoaded: getYoutubeLibraryLoaded(state)
 });
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
   const fetchWatchDetails = watchActions.details.request;
   return bindActionCreators({ fetchWatchDetails }, dispatch);
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Watch);
