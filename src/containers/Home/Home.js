@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { usePrevious } from "./usePrevious";
+import { usePrevious } from "../../hooks/usePrevious";
 import Sidebar from "../Sidebar/Sidebar";
 import HomeContent from "./HomeContent/HomeContent";
 import { connect } from "react-redux";
