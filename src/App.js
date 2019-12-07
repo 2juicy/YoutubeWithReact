@@ -10,7 +10,6 @@ require("dotenv").config();
 
 function App(props) {
   useEffect(() => {
-    console.log("what");
     const script = document.createElement("script");
     script.src = "https://apis.google.com/js/client.js";
 
