@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
         libraryLoaded: true
       };
     default:
-      return false;
+      return state;
   }
 }
 
