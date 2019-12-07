@@ -25,7 +25,6 @@ function Home(props) {
   }, []);
 
   useEffect(() => {
-    console.log(props.youtubeLibraryLoaded, prevYoutubeLibraryLoaded);
     if (
       props.youtubeLibraryLoaded &&
       props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded
