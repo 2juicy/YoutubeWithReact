@@ -21,7 +21,7 @@ function Watch(props) {
     if (props.youtubeLibraryLoaded) {
       props.fetchWatchDetails(videoId);
     }
-  }, [props.youtubeLibraryLoaded]);
+  }, [videoId]);
 
   return <WatchContent id={videoId} />;
 }
