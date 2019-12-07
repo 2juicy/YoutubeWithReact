@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./Watch.scss";
 import WatchContent from "./WatchContent/WatchContent";
 import { useLocation } from "react-router-dom";
 import { getYoutubeLibraryLoaded } from "../../store/reducers/api";
