@@ -17,6 +17,7 @@ function Home(props) {
   const prevVideoCategories = usePrevious(props.videoCategories);
 
   useEffect(() => {
+    console.log(props.youtubeLibraryLoaded);
     if (props.youtubeLibraryLoaded) {
       props.fetchMostPopularVideos();
       props.fetchVideoCategories();
