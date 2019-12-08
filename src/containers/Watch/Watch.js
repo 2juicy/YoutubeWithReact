@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 function Watch(props) {
+  console.log(props);
   // Function for finding URL then fetch with hook
   const location = useLocation();
   function getVideoId() {

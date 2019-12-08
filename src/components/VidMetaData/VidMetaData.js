@@ -3,9 +3,10 @@ import "./VidMetaData.scss";
 import { Button, Icon } from "semantic-ui-react";
 import Rating from "../Rating/Rating";
 
-export default function VidMetaData({ views }) {
-  const commas = views
-    ? views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+export default function VidMetaData(props) {
+  console.log(props);
+  const commas = props.views
+    ? props.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     : null;
 
   return (

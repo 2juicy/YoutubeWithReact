@@ -5,14 +5,17 @@ import RelatedVids from "../../../components/RelatedVids/RelatedVids";
 import VidMetaData from "../../../components/VidMetaData/VidMetaData";
 import VidInfoBox from "../../../components/VidInfoBox/VidInfoBox";
 import Comments from "../../Comments/Comments";
+import { getVideoById } from "../../../store/reducers/video";
+import { connect } from "react-redux";
 
-function WatchContent({ id }) {
-  if (!id) return null;
+function WatchContent(props) {
+  console.log(props);
+  if (!props.id) return null;
 
   return (
     <div className="watch-grid">
-      <Video className="video" id={id} />
-      <VidMetaData className="metadata" views={9999} />
+      <Video className="video" id={props.id} />
+      <VidMetaData className="metadata" video={props.video} />
       <VidInfoBox />
       <Comments />
       {/* <RelatedVids /> */}
@@ -20,4 +23,8 @@ function WatchContent({ id }) {
   );
 }
 
-export default React.memo(WatchContent);
+const mapStateToProps = (state, props) => ({
+  video: getVideoById(state, props.id)
+});
+
+export default connect(mapStateToProps, null)(WatchContent);
