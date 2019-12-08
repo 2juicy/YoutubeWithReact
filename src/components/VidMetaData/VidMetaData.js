@@ -11,11 +11,14 @@ export default function VidMetaData(props) {
 
   return (
     <div className="vid-metadata">
-      <h3>Video Title</h3>
+      <h3>{props.video.snippet.title}</h3>
       <div className="vid-stats">
         <span>{commas} views</span>
         <div className="vid-actions">
-          <Rating likes={123} dislikes={12} />
+          <Rating
+            likes={props.video.statistics.likeCount}
+            dislikes={props.video.statistics.dislikeCount}
+          />
           <Button basic icon labelPosition="left">
             <Icon name="share" />
             Share

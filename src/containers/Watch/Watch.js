@@ -19,6 +19,7 @@ function Watch(props) {
   // ComponentDidUpdate
   useEffect(() => {
     if (props.youtubeLibraryLoaded) {
+      console.log("hit");
       props.fetchWatchDetails(videoId);
     }
   }, [videoId]);

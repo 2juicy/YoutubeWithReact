@@ -93,10 +93,11 @@ function reduceFetchMostPopularVideosByCategory(
   };
 }
 
-function reduceWatchDetails(responses, prevState) {
-  const videoDetailResponse = responses.find(
-    res => res.result.kind === VIDEO_LIST_RESPONSE
+function reduceWatchDetails(res, prevState) {
+  const videoDetailResponse = res.find(
+    r => r.result.kind === VIDEO_LIST_RESPONSE
   );
+
   const video = videoDetailResponse.result.items[0];
 
   return {
