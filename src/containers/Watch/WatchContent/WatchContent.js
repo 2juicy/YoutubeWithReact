@@ -7,6 +7,8 @@ import VidInfoBox from "../../../components/VidInfoBox/VidInfoBox";
 import Comments from "../../Comments/Comments";
 
 function WatchContent({ id }) {
+  if (!id) return null;
+
   return (
     <div className="watch-grid">
       <Video className="video" id={id} />
