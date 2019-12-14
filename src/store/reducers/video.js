@@ -156,7 +156,7 @@ export const getVideosByCategory = createSelector(
   state => state.videos.byId,
   state => state.videos.categories,
   (videosByCategory, videosById, categories) => {
-    return Object.keys(videosByCategory || {}).reduce((acc, categoryId) => {
+    return Object.keys(videosByCategory || {}).r`e`duce((acc, categoryId) => {
       const videoIds = videosByCategory[categoryId].items;
       const categoryTitle = categories[categoryId];
       acc[categoryTitle] = videoIds.map(videoId => videosById[videoId]);
