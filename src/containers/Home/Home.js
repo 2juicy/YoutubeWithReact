@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { usePrevious } from "../../hooks/usePrevious";
 import Sidebar from "../Sidebar/Sidebar";
 import HomeContent from "./HomeContent/HomeContent";
@@ -14,6 +14,7 @@ import {
 
 function Home(props) {
   const [categoryIndex, setCategoryIndex] = useState(0);
+  const mounted = useRef();
   const prevVideoCategories = usePrevious(props.videoCategories);
   const prevYoutubeLibraryLoaded = usePrevious(props.youtubeLibraryLoaded);
 
@@ -25,17 +26,21 @@ function Home(props) {
   }, []);
 
   useEffect(() => {
-    if (
-      props.youtubeLibraryLoaded &&
-      props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded
-    ) {
-      props.fetchMostPopularVideos();
-      props.fetchVideoCategories();
-    } else if (
-      prevVideoCategories &&
-      props.videoCategories !== prevVideoCategories
-    ) {
-      fetchVideosByCategory();
+    if (!mounted.current) {
+      mounted.current = true;
+    } else {
+      if (
+        props.youtubeLibraryLoaded &&
+        props.youtubeLibraryLoaded !== prevYoutubeLibraryLoaded
+      ) {
+        props.fetchMostPopularVideos();
+        props.fetchVideoCategories();
+      } else if (
+        prevVideoCategories &&
+        props.videoCategories !== prevVideoCategories
+      ) {
+        fetchVideosByCategory();
+      }
     }
   });
 
