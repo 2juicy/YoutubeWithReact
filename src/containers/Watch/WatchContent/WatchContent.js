@@ -17,7 +17,7 @@ function WatchContent(props) {
       <Video className="video" id={props.id} />
       <VidMetaData className="metadata" video={props.video} />
       <VidInfoBox />
-      <Comments amount={1231} />
+      <Comments amount={props.video.statistics.commentCount} />
       {/* <RelatedVids /> */}
     </div>
   );

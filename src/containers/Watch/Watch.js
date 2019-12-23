@@ -7,7 +7,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 function Watch(props) {
-  console.log(props);
   // Function for finding URL then fetch with hook
   const location = useLocation();
   function getVideoId() {
@@ -19,7 +18,6 @@ function Watch(props) {
   // ComponentDidUpdate
   useEffect(() => {
     if (props.youtubeLibraryLoaded) {
-      console.log("hit");
       props.fetchWatchDetails(videoId);
     }
   }, [videoId]);

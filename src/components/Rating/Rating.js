@@ -4,6 +4,7 @@ import { Icon, Progress } from "semantic-ui-react";
 
 export default function Rating({ likes, dislikes, hideProgress }) {
   const percent = likes && dislikes ? 100 * (likes / (likes + dislikes)) : null;
+  console.log(percent);
 
   return (
     <div className="rating">
