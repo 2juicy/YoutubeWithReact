@@ -1,7 +1,7 @@
 import React from "react";
 import "./NextVid.scss";
 import { Checkbox, Divider } from "semantic-ui-react";
-import VidPreview from "../VidPreview/VidPreview";
+// import VidPreview from "../VidPreview/VidPreview";
 
 export default function NextVid() {
   return (
@@ -13,7 +13,7 @@ export default function NextVid() {
           <Checkbox toggle defaultChecked />
         </div>
       </div>
-      <VidPreview horizontal />
+      {/* <VidPreview horizontal /> */}
       <Divider />
     </>
   );
