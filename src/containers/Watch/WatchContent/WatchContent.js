@@ -16,7 +16,7 @@ function WatchContent(props) {
     <div className="watch-grid">
       <Video className="video" id={props.id} />
       <VidMetaData className="metadata" video={props.video} />
-      <VidInfoBox />
+      <VidInfoBox video={props.video} />
       <Comments amount={props.video.statistics.commentCount} />
       <RelatedVids />
     </div>
