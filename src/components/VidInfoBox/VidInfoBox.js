@@ -24,13 +24,11 @@ export default function VidInfoBox({ video }) {
       <Button color="youtube">12.3K Subscribe</Button>
       <div className="vid-description">
         <div className={collapse ? "collapsed" : "expanded"}>
-          {videoDescription
-            ? videoDescription.split("\n").map((text, i) => (
-                <p key={i}>
-                  <Linkify>{text}</Linkify>
-                </p>
-              ))
-            : null}
+          {videoDescription ? (
+            <pre>
+              <Linkify>{videoDescription}</Linkify>
+            </pre>
+          ) : null}
         </div>
         <Button onClick={() => setCollapse(state => !state)} compact>
           {buttonTitle}
