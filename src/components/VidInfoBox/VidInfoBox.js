@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "./VidInfoBox.scss";
 import { Button, Image } from "semantic-ui-react";
+import Linkify from "react-linkify";
 
-export default function VidInfoBox() {
+export default function VidInfoBox({ video }) {
   const [collapse, setCollapse] = useState(true);
   const buttonTitle = collapse ? "Show More" : "Show Less";
+
+  const videoDescription = video.snippet ? video.snippet.description : null;
+
+  console.log(videoDescription);
 
   return (
     <div className="vid-info-box">
