@@ -6,7 +6,6 @@ import Linkify from "react-linkify";
 export default function VidInfoBox({ video }) {
   const [collapse, setCollapse] = useState(true);
   const buttonTitle = collapse ? "Show More" : "Show Less";
-
   const videoDescription = video.snippet ? video.snippet.description : null;
 
   console.log(videoDescription);
@@ -25,11 +24,13 @@ export default function VidInfoBox({ video }) {
       <Button color="youtube">12.3K Subscribe</Button>
       <div className="vid-description">
         <div className={collapse ? "collapsed" : "expanded"}>
-          <p>Paragraph...</p>
-          <p>Paragraph...</p>
-          <p>Paragraph...</p>
-          <p>Paragraph...</p>
-          <p>Paragraph...</p>
+          {videoDescription
+            ? videoDescription.split("\n").map((text, i) => (
+                <p key={i}>
+                  <Linkify>{text}</Linkify>
+                </p>
+              ))
+            : null}
         </div>
         <Button onClick={() => setCollapse(state => !state)} compact>
           {buttonTitle}
