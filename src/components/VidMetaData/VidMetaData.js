@@ -4,7 +4,6 @@ import { Button, Icon } from "semantic-ui-react";
 import Rating from "../Rating/Rating";
 
 export default function VidMetaData(props) {
-  console.log(props.video);
   const viewCount = props.video.statistics.viewCount
     ? props.video.statistics.viewCount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     : null;
